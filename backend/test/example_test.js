@@ -7,7 +7,7 @@ const connectDB = require('../config/db');
 const mongoose = require('mongoose');
 const sinon = require('sinon');
 const Task = require('../models/Task');
-const { updateTask,getTask,addTask,deleteTask } = require('../controllers/taskController');
+const { updateTask,getTasks,addTask,deleteTask } = require('../controllers/taskController');
 const { expect } = chai;
 
 chai.use(chaiHttp);
@@ -182,7 +182,7 @@ describe('GetTask Function Test', () => {
     };
 
     // Call function
-    await getTask(req, res);
+    await getTasks(req, res);
 
     // Assertions
     expect(findStub.calledOnceWith({ userId })).to.be.true;
@@ -205,7 +205,7 @@ describe('GetTask Function Test', () => {
     };
 
     // Call function
-    await getTask(req, res);
+    await getTasks(req, res);
 
     // Assertions
     expect(res.status.calledWith(500)).to.be.true;
