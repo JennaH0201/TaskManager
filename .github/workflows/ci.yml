@@ -3,7 +3,7 @@ name: Backend CI
 on:
   push:
     branches:
-      - main  # Trigger CI on pushes to the main branch. 이거 확인용인데 아니 뭐야
+      - main  # Trigger CI on pushes to the main branch. 
 
 jobs:
   test:
